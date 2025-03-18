@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Players</title>
+    <link rel="icon" href="logo_btn/favicon.ico" type="image/png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/cf845565b5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <img src="logo_btn/ipl-logo.png" alt="logo" />
+          </div>
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="index.html"><i class="fa-solid fa-house-user"></i> Home</a>
+              </li>
+              <li>
+                <a href="#teams"><i class="fa-solid fa-user-group"></i> Teams</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="nav-right">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Enter team code...eg - MI" />
+            <div class="autocom-box">
+              <!-- LIST FOR SUGGESTIONS -->
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
+
+          <div class="nav-buttons">
+            <a href="add-team.html">
+              <button id="add-team-button" class="add-button" onclick="addteamclicked()">
+                <i class="fa-solid fa-plus"></i> Add Team
+              </button>
+            </a>
+            <a href="add-player.html">
+              <button id="add-player-button" class="add-button" onclick="addPlayerClicked()">
+                <i class="fa-solid fa-plus"></i> Add Player
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+    <!--------- IMAGE SLIDER STARTS HERE --------->
+
+    <div class="slider">
+      <!-- SLIDER IMAG LIST -->
+      <div class="slider-list">
+        <div class="slider-item">
+          <img src="img/1.webp" alt="img1" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/2.webp" alt="img2" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/3.webp" alt="img3" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/4.webp" alt="img4" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/5.webp" alt="img4" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/6.webp" alt="img4" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/7.webp" alt="img4" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/8.webp" alt="img4" />
+        </div>
+
+        <div class="slider-item">
+          <img src="img/9.webp" alt="img4" />
+        </div>
+      </div>
+
+      <!-- BUTTONS - PREVIOUS $ NEXT -->
+      <div class="slider-btn">
+        <button id="prev">
+          <img src="logo_btn/btn-prev.png" alt="Previous_btn" />
+        </button>
+
+        <button id="next">
+          <img src="logo_btn/btn-next.png" alt="Next_btn" />
+        </button>
+      </div>
+
+      <!-- BUTTON DOTS (9 images = 9 dots) -->
+      <ul class="dots">
+        <li class="active1"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <!--------- IMAGE SLIDER ENDS HERE --------->
+
+    <!--------- TEAMS SECTION STARTS HERE --------->
+
+    <section id="teams">
+      <div class="card">
+        <div class="team-head">
+          <h1>IPL 2025 Teams</h1>
+        </div>
+        <div class="top-teams" id="container_teams">
+        </div>
+      </div>
+    </section>
+
+    <!--------- TEAMS SECTION ENDS HERE --------->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About IPL</h3>
+                <p>The Indian Premier League (IPL) is a professional Twenty20 cricket league in India. It is one of the most-attended cricket leagues in the world and has revolutionized the game.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#teams"><i class="fas fa-users"></i> Teams</a></li>
+                    <li><a href="add-team.html"><i class="fas fa-plus-circle"></i> Add Team</a></li>
+                    <li><a href="add-player.html"><i class="fas fa-user-plus"></i> Add Player</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Have questions or suggestions? We'd love to hear from you.</p>
+                <p><i class="fas fa-envelope"></i> Email: info@ipl.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +91 123 456 7890</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IPL. Designed with <i class="fas fa-heart"></i> by <a href="#">Ramesh Gharami</a></p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index-data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

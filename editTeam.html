@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="logo_btn/ipl-logo.png" alt="logo" />
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house-user"></i> Home</a></li>
+                        <li><a href="index.html#teams"><i class="fa-solid fa-user-group"></i> Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-input">
+                    <input type="text" placeholder="Enter team code...eg - MI" />
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                </div>
+                <div class="nav-buttons">
+                    <a href="add-team.html"><button class="add-button"><i class="fa-solid fa-plus"></i> Add Team</button></a>
+                    <a href="add-player.html"><button class="add-button"><i class="fa-solid fa-plus"></i> Add Player</button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Edit Team Form Section -->
+    <div class="form-container">
+        <div class="form-card">
+            <h2><i class="fas fa-edit"></i> Edit Team</h2>
+            <form id="editTeamForm">
+                <div class="form-grid">
+                    <!-- Team Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Team Information</h3>
+                        <div class="input-group">
+                            <label for="teamName">
+                                <i class="fas fa-users"></i> Team Name
+                            </label>
+                            <input type="text" id="teamName" placeholder="Enter team name" required />
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="teamIcon">
+                                <i class="fas fa-image"></i> Team Icon URL
+                            </label>
+                            <input type="url" id="teamIcon" placeholder="Enter team icon URL" required />
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="teamCode">
+                                <i class="fas fa-code"></i> Team Code
+                            </label>
+                            <input type="text" id="teamCode" placeholder="Enter team code (e.g., MI)" required maxlength="3" />
+                        </div>
+                    </div>
+
+                    <!-- Championship History -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-trophy"></i> Championship History</h3>
+                        <div class="input-group">
+                            <label for="wonCount">
+                                <i class="fas fa-medal"></i> Championships Won
+                            </label>
+                            <input type="number" id="wonCount" placeholder="Number of championships" min="0" required />
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="topBatsman">
+                                <i class="fas fa-running"></i> Top Batsman
+                            </label>
+                            <input type="text" id="topBatsman" placeholder="Enter top batsman name" required />
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="topBowler">
+                                <i class="fas fa-bowling-ball"></i> Top Bowler
+                            </label>
+                            <input type="text" id="topBowler" placeholder="Enter top bowler name" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> About IPL</h3>
+                <p>The Indian Premier League (IPL) is a professional Twenty20 cricket league in India. It is one of the most-attended cricket leagues in the world and has revolutionized the game.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#teams"><i class="fas fa-users"></i> Teams</a></li>
+                    <li><a href="add-team.html"><i class="fas fa-plus-circle"></i> Add Team</a></li>
+                    <li><a href="add-player.html"><i class="fas fa-user-plus"></i> Add Player</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p>Have questions or suggestions? We'd love to hear from you.</p>
+                <p><i class="fas fa-envelope"></i> Email: info@ipl.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +91 123 456 7890</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 IPL. Designed with <i class="fas fa-heart"></i> by <a href="#">Ramesh Gharami</a></p>
+        </div>
+    </footer>
+
+    <script src="index-data.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
