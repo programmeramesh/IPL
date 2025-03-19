@@ -2,16 +2,12 @@ let urlData = location.href;
 let newUrl = new URL(urlData);
 let teamFull = newUrl.searchParams.get("name");
 
-// console.log(teamFull);
-
 // --------------------- GETTING DATA FROM LOCAL STORAGE --------------------- //
 
 teamsDetails = JSON.parse(localStorage.getItem("teamArray"));
 playersDetails = JSON.parse(localStorage.getItem("playerArray"));
 var teamMainBox = document.getElementById("container_teams");
 var teamDetailsTable = document.getElementById("team-details");
-
-var cnt = 0;
 
 // Find team details
 let teamDetails = teamsDetails.find(team => team.sName === teamFull);
@@ -25,7 +21,7 @@ document.getElementById('team-name').textContent = teamDetails.teamFullName;
 document.getElementById('team-wins').textContent = teamDetails.WonCount;
 
 // Get players for this team
-let teamPlayers = playersDetails.filter(player => player.from === teamFull);
+let teamPlayers = playersDetails.filter(player => player.playerTeam === teamDetails.teamFullName);
 document.getElementById('player-count').textContent = teamPlayers.length;
 
 // Render players
@@ -65,40 +61,27 @@ document.addEventListener('mousemove', function(e) {
 });
 
 // search for top batsman
-
-var topBatsman = "";
+var topBatsman = "No Player";
 for (var j = 0; j < playersDetails.length; j++) {
-  if (
-    playersDetails[j].description == "Batsman" &&
-    playersDetails[j].from == teamFull
-  ) {
-    topBatsman = playersDetails[j].playerName;
-
-    break;
-  } else {
-    topBatsman = "No Player";
-  }
+    if (playersDetails[j].description === "Batsman" && 
+        playersDetails[j].playerTeam === teamDetails.teamFullName) {
+        topBatsman = playersDetails[j].playerName;
+        break;
+    }
 }
 
 // search for top bowler
-
-var topBowler = "";
+var topBowler = "No Player";
 for (var j = 0; j < playersDetails.length; j++) {
-  if (
-    playersDetails[j].description == "Bowler" &&
-    playersDetails[j].from == teamFull
-  ) {
-    topBowler = playersDetails[j].playerName;
-
-    break;
-  } else {
-    topBowler = "No Player";
-  }
+    if (playersDetails[j].description === "Bowler" && 
+        playersDetails[j].playerTeam === teamDetails.teamFullName) {
+        topBowler = playersDetails[j].playerName;
+        break;
+    }
 }
 
 // team table
 
-console.log(cnt);
 teamsDetails.map((item) => {
   if (teamFull === item.sName) {
     return (teamDetailsTable.innerHTML += `
@@ -124,7 +107,7 @@ teamsDetails.map((item) => {
       <p><span>Top Batsman</span> <b>-</b>${topBatsman}</p>
       <p><span>Top Bowler</span> <b>-</b> ${topBowler}</p>
       <p><span>Matches Win</span> <b>-</b> ${item.WonCount}</p>
-      <p><span>Player Count</span> <b>-</b> ${cnt}</p>
+      <p><span>Player Count</span> <b>-</b> ${teamPlayers.length}</p>
   </div>
 </div>
 `);

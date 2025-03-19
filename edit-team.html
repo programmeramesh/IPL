@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team - IPL</title>
+    <link rel="icon" href="logo_btn/favicon.ico" type="image/png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .form-group .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .form-group.error input {
+            border-color: #dc3545;
+        }
+        .form-group.error .error-message {
+            display: block;
+        }
+        .form-group.success input {
+            border-color: #198754;
+        }
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+        #statusMessage {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+            display: none;
+        }
+        #statusMessage.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        #statusMessage.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="logo_btn/ipl-logo.png" alt="logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house-user"></i> Home</a></li>
+                        <li><a href="index.html#teams"><i class="fa-solid fa-user-group"></i> Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2><i class="fas fa-edit"></i> Edit Team</h2>
+        <div id="statusMessage"></div>
+        <form id="editTeamForm" novalidate>
+            <div class="form-group">
+                <label for="teamFullName">Team Full Name:</label>
+                <input type="text" id="teamFullName" name="teamFullName" required 
+                       pattern="^[A-Za-z\s]{3,50}$" 
+                       title="3-50 characters, letters and spaces only">
+                <div class="error-message">Please enter a valid team name (3-50 characters, letters and spaces only)</div>
+            </div>
+            <div class="form-group">
+                <label for="sName">Short Name:</label>
+                <input type="text" id="sName" name="sName" required 
+                       pattern="^[A-Z]{2,5}$"
+                       title="2-5 uppercase letters only">
+                <div class="error-message">Please enter a valid short name (2-5 uppercase letters)</div>
+            </div>
+            <div class="form-group">
+                <label for="teamIcon">Team Icon URL:</label>
+                <input type="url" id="teamIcon" name="teamIcon" required>
+                <div class="error-message">Please enter a valid image URL (http:// or https://)</div>
+            </div>
+            <div class="form-group">
+                <label for="wonCount">Championships Won:</label>
+                <input type="number" id="wonCount" name="wonCount" min="0" required>
+                <div class="error-message">Please enter a valid number (0 or greater)</div>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="submit-btn" id="updateBtn">
+                    <i class="fas fa-save"></i> Update Team
+                </button>
+                <button type="button" class="delete-btn" id="deleteTeam">
+                    <i class="fas fa-trash"></i> Delete Team
+                </button>
+                <a href="index.html" class="cancel-btn">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <script src="index-data.js"></script>
+    <script src="edit-team.js"></script>
+</body>
+</html>
